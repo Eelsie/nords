@@ -147,7 +147,7 @@ h3, .credits, .tablerow, .tableheader .tablecell, .btn  {
 }
 
 .editcell {
-  padding: 24px 0 24px 14px;
+  padding: 14px 0 14px 14px;
 }
 
 .editcell:last-of-type {
