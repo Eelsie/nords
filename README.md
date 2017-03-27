@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform basic installation.
-You can find more info on the [create-react-app guide]((https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)).
+You can find more info on the create-react-app [guide]((https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)).
 
 # Installation
 
