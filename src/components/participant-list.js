@@ -3,7 +3,7 @@ import Participant from './participant';
 
 const ParticipantList = (props) => {
 
-  const sortColumn = (e, key) => {
+  const sortColumn = (e) => {
     let arrow = e.target.lastChild.textContent;
     var elements = document.getElementsByClassName('tabletitle');
     for (var i = 0, l = elements.length; i < l; i++) {
@@ -14,7 +14,8 @@ const ParticipantList = (props) => {
     } else if (arrow === "↓") {
       e.target.lastChild.textContent = "↑";
     }
-
+    let key = e.target.dataset.field;
+    console.log(key);
     let order = e.target.lastChild.textContent;
     props.handleSortColumn(key, order);
   }
@@ -22,10 +23,10 @@ const ParticipantList = (props) => {
   return (
     <div>
       <div className="table">
-          <div className="tablerow tableheader">
-            <div className="tablecell tabletitle tablecol-1" onClick={(e) => sortColumn(e, "name")}>Name <span></span></div>
-            <div className="tablecell tabletitle tablecol-2" onClick={(e) => sortColumn(e, "email")}>E-mail address <span></span></div>
-            <div className="tablecell tabletitle tablecol-3" onClick={(e) => sortColumn(e, "phone")}>Phone number <span></span></div>
+          <div className="tablerow tableheader" onClick={sortColumn}>
+            <div className="tablecell tabletitle tablecol-1" data-field="name">Name <span></span></div>
+            <div className="tablecell tabletitle tablecol-2" data-field="email">E-mail address <span></span></div>
+            <div className="tablecell tabletitle tablecol-3" data-field="phone">Phone number <span></span></div>
             <div className="tablecell tablecol-4"></div>
           </div>
           {props.participants.map((participant) => <Participant  key={participant.id} {...participant} handleRemoveParticipant={props.handleRemoveParticipant} handleEditParticipant={props.handleEditParticipant}/>)}
