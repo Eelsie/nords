@@ -175,6 +175,12 @@ h3, .credits, .tablerow, .tableheader .tablecell, .btn  {
   margin-bottom: 10px;
 }
 
+.tabletitle span {
+  z-index: -1;
+  pointer-events: none;
+}
+
+
 
 /* BUTTONS */
 

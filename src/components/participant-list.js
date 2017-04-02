@@ -15,7 +15,6 @@ const ParticipantList = (props) => {
       e.target.lastChild.textContent = "↑";
     }
     let key = e.target.dataset.field;
-    console.log(key);
     let order = e.target.lastChild.textContent;
     props.handleSortColumn(key, order);
   }
