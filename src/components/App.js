@@ -27,7 +27,7 @@ const participants = [
   {
     id: uuid(),
     name: "Elisa Bestetti",
-    email: "elbeste@gmail.com",
+    email: "el@gmail.com",
     phone: "0451359911"
   },
   {
@@ -47,10 +47,90 @@ const participants = [
     name: "Sue Townsend",
     email: "sue@gmail.com",
     phone: "0455441234"
+  },
+  {
+    id: uuid(),
+    name: "Elena Ferrante",
+    email: "elena@gmail.com",
+    phone: "0451442234"
+  },
+  {
+    id: uuid(),
+    name: "Janice Daniels",
+    email: "janice@gmail.com",
+    phone: "0451552234"
+  },
+  {
+    id: uuid(),
+    name: "Danny Jo",
+    email: "dajo@gmail.com",
+    phone: "0456672234"
+  },
+  {
+    id: uuid(),
+    name: "Carlo Bo",
+    email: "Bocarlo@gmail.com",
+    phone: "0451557774"
+  },
+  {
+    id: uuid(),
+    name: "Antonio Garcia",
+    email: "agarciac@tinyurl.com",
+    phone: "0058951611"
+  },
+  {
+    id: uuid(),
+    name: "Todd Rogers",
+    email: "trogersd@mlb.com",
+    phone: "0431453158"
+  },
+  {
+    id: uuid(),
+    name: "Debra Reyes",
+    email: "dreyese@discovery.com",
+    phone: "0030451182"
+  },
+  {
+    id: uuid(),
+    name: "Janice Daniels",
+    email: "jdanielsf@odnoklassniki.ru",
+    phone: "0927456278"
+  },
+  {
+    id: uuid(),
+    name: "Kenneth Woods",
+    email: "kwoodsg@weather.com",
+    phone: "0610653289"
+  },
+  {
+    id: uuid(),
+    name: "Terry Henry",
+    email: "thenryh@unicef.org",
+    phone: "0532951373"
+  },
+  {
+    id: uuid(),
+    name: "Steven Stanley",
+    email: "sstanleyi@xrea.com",
+    phone: "0114659167"
+  },
+  {
+    id: uuid(),
+    name: "Terry Hart",
+    email: "thartj@g.co",
+    phone: "0812456155"
+  },
+  {
+    id: uuid(),
+    name: "Bobby Larson",
+    email: "blarsonb@wordpress.com",
+    phone: "0188752639"
   }
 ];
 
-class App extends Component {
+
+
+class  App extends Component {
   constructor(props) {
     super(props);
 
@@ -89,10 +169,12 @@ class App extends Component {
   handleSortColumn(key, order) {
     let sortedArray = [];
     if(order === "↓") {
-      sortedArray = this.state.participants.sort((a, b) => a[key] > b[key]);
+      sortedArray = this.state.participants.sort((a, b) => {let itemA = a[key].toUpperCase(); let itemB = b[key].toUpperCase();
+      return itemA > itemB ? 1 : (itemA < itemB ? -1 : 0)});
     }
     if(order !== "↓") {
-      sortedArray = this.state.participants.sort((a, b) => a[key] < b[key]);
+      sortedArray = this.state.participants.sort((a, b) => {let itemA = a[key].toUpperCase(); let itemB = b[key].toUpperCase();
+      return itemA < itemB ? 1 : (itemA > itemB ? -1 : 0)});
     }
     this.setState({
       participants: sortedArray
